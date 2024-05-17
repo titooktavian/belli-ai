@@ -5,9 +5,9 @@ import { LucideIcon } from "lucide-react";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-    leftIcon?: LucideIcon;
-    rightIcon?: LucideIcon;
-  }
+  leftIcon?: any;
+  rightIcon?: any;
+};
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, leftIcon, rightIcon, ...props }, ref) => {
