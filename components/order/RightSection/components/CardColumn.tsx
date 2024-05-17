@@ -1,4 +1,6 @@
-const CardColumn = ({ label, value }) => {
+import { FunctionComponent } from 'react';
+
+const CardColumn: FunctionComponent<{ label: string, value: string }> = ({ label, value }) => {
   return (
     <div className="flex justify-between">
       <h2 className="text-base">{label}</h2>
