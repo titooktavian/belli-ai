@@ -22,7 +22,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { ClockIcon, MagnifyingGlassIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, ListBulletIcon, MagnifyingGlassIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 import { Button } from "../ui/button";
 import { Cross2Icon, InfoCircledIcon, ReloadIcon, SizeIcon } from "@radix-ui/react-icons";
 import { Card, CardContent, CardFooter, CardTitle } from "../ui/card";
@@ -31,6 +31,7 @@ import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Package, PlaneIcon, ScrollText, UserRound } from "lucide-react";
 import { Checkbox } from "../ui/checkbox";
+import { Input } from "../ui/input";
   
 const OrderDialog = () => {
   return (
@@ -54,7 +55,7 @@ const OrderDialog = () => {
               <div className="w-2/3">
                 <Tabs defaultValue="create-booking" className="w-full flex gap-5" orientation="vertical">
                   <Card
-                    className="overflow-hidden rounded-lg border-[1px] bg-transparent border-zinc-700 w-5/12"
+                    className="overflow-hidden rounded-lg border-[1px] bg-transparent border-zinc-700 w-5/12 h-fit"
                   >
                     <CardContent className="p-3">
                       <TabsList className="bg-blue flex-col items-start p-0 gap-4">
@@ -263,9 +264,354 @@ const OrderDialog = () => {
                       </CardContent>
                     </Card>
                   </TabsContent>
-                  <TabsContent value="consigment-details" className="w-7/12">Consignment Details</TabsContent>
-                  <TabsContent value="shipper-details" className="w-7/12">Shipper Details</TabsContent>
-                  <TabsContent value="process-rates" className="w-7/12">Process Rates</TabsContent>
+                  <TabsContent value="consigment-details" className="w-7/12 p-0 mt-0">
+                    <Card
+                      className="overflow-hidden rounded-lg border-[1px] bg-transparent border-zinc-700 text-zinc-400"
+                    >
+                      <CardContent className="p-3 flex flex-col gap-4 py-4">
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Origin *</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Destination *</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Input className="border-zinc-700" rightIcon={<MagnifyingGlassIcon className="h-4 w-4 text-zinc-400" />} />
+                          </div>
+                        </div>
+                        
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Commodity Code *</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Input className="border-zinc-700" rightIcon={<MagnifyingGlassIcon className="h-4 w-4 text-zinc-400" />} />
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Commodity Description *</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Payment Mode</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Bill To</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Bill To Name</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Shipper</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <div className="flex gap-2">
+                              <Input className="border-zinc-700 flex-grow" rightIcon={<MagnifyingGlassIcon className="h-4 w-4 text-zinc-400" />} />
+                              <Button variant="ghost" size="icon">
+                                <ListBulletIcon className="h-5 w-5" />
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Consignee</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <div className="flex gap-2">
+                              <Input className="border-zinc-700 flex-grow" rightIcon={<MagnifyingGlassIcon className="h-4 w-4 text-zinc-400" />} />
+                              <Button variant="ghost" size="icon">
+                                <ListBulletIcon className="h-5 w-5" />
+                              </Button>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Customer</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Input className="border-zinc-700" rightIcon={<MagnifyingGlassIcon className="h-4 w-4 text-zinc-400" />} />
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Customer Name</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Pieces</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Select>
+                              <SelectTrigger className="w-[180px] border-zinc-700 w-full">
+                                <SelectValue placeholder="" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectItem value="TYPE-1">TYPE-1</SelectItem>
+                                  <SelectItem value="TYPE-2">TYPE-2</SelectItem>
+                                  <SelectItem value="TYPE-3">TYPE-3</SelectItem>
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-3">
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Gross Weight (Kg) *</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Input className="border-zinc-700" rightIcon={<ListBulletIcon className="h-4 w-4 text-zinc-400" />} />
+                          </div>
+
+                          <div className="flex flex-col gap-2 w-1/2">
+                            <div className="flex gap-1 items-center text-white">
+                              <div className="text-sm">Freight Forwarder</div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <InfoCircledIcon />
+                                  </TooltipTrigger>
+                                  <TooltipContent side="right">
+                                    <p>Lorem</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Input className="border-zinc-700" rightIcon={<MagnifyingGlassIcon className="h-4 w-4 text-zinc-400" />} />
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="shipper-details" className="w-7/12 p-0 mt-0">Shipper Details</TabsContent>
+                  <TabsContent value="process-rates" className="w-7/12 p-0 mt-0">Process Rates</TabsContent>
                 </Tabs>
               </div>
               <div className="w-1/3 flex flex-col gap-5">
