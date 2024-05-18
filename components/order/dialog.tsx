@@ -20,6 +20,7 @@ import ConsignmentDetails from "./TabList/ConsignmentDetails";
 import ProcessRates from "./TabList/ProcessRates";
 import RightSection from "./RightSection";
 import OrderNavigator from "./OrderNavigator";
+import ShipperDetails from "./TabList/ShipperDetails";
 
 const TAB_LIST = [
   {
@@ -112,7 +113,9 @@ const OrderDialog = () => {
                     <ConsignmentDetails />
                   </TabsContent>
 
-                  <TabsContent value="shipper-details" className="w-7/12 p-0 mt-0">Shipper Details</TabsContent>
+                  <TabsContent value="shipper-details" className="w-7/12 p-0 mt-0">
+                    <ShipperDetails />
+                  </TabsContent>
 
                   <TabsContent value="process-rates" className="w-7/12 p-0 mt-0">
                     <ProcessRates />
